@@ -1,0 +1,111 @@
+.header {
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1000;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.hotel-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(to right, #fff, #f9d423);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.tagline {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-top: 3px;
+}
+
+/* Navigation */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Hover underline effect for normal links */
+.nav-link:not(.signup):not(.logout):hover {
+  color: #f9d423;
+}
+
+.nav-link:not(.signup):not(.logout):after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 4px;
+  left: 0;
+  background-color: #f9d423;
+  transition: width 0.3s ease;
+}
+
+.nav-link:not(.signup):not(.logout):hover:after {
+  width: 100%;
+}
+
+/* Special button styles */
+.signup {
+  background: #22c55e; /* green */
+  color: white;
+  font-weight: 600;
+}
+
+.signup:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+.logout {
+  background: #ef4444; /* red */
+  color: white;
+  font-weight: 600;
+}
+
+.logout:hover {
+  background: #dc2626;
+  transform: translateY(-2px);
+}
+
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');

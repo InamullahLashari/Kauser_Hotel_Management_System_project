@@ -1,0 +1,28 @@
+<header class="header">
+  <div class="logo-container">
+    <div class="logo">
+      <span class="hotel-icon">🏨</span>
+      <span class="hotel-name">Kauser Hotel</span>
+      <span class="tagline">Luxury Redefined</span>
+    </div>
+  </div>
+
+  <nav class="nav-links">
+    <!-- Always visible -->
+    <a (click)="onHomeClick()" class="nav-link">Home</a>
+    <a (click)="onExploreRoom()" class="nav-link">Rooms & Suites</a>
+    <a (click)="onDiningClick()" class="nav-link">Dining</a>
+    <a (click)="onBooking()" class="nav-link">Booking</a>
+    <a (click)="onContactClick()" class="nav-link">Contact</a>
+
+    <!-- Admin dashboard only for admins -->
+    <a *ngIf="auth.isAdmin()" class="nav-link">Admin Dashboard</a>
+
+    <!-- Show login & signup if NOT logged in -->
+    <a *ngIf="!auth.getRole()" (click)="onloginClick()" class="nav-link">Login</a>
+    <a *ngIf="!auth.getRole()" (click)="onsignupClick()" class="nav-link signup">Sign Up</a>
+
+    <!-- Show logout if logged in -->
+    <a *ngIf="auth.getRole()" (click)="onLogout()" class="nav-link logout">Logout</a>
+  </nav>
+</header>

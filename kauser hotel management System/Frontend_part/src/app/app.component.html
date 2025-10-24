@@ -1,0 +1,19 @@
+<app-header 
+    (homeClicked)="returnToBanner()"
+    (logoutClicked)="logout()"
+    (loginClicked)="onloginClick()"
+    (signupClicked)="onsignupClick()">
+</app-header>
+
+<app-hero-banner 
+    *ngIf="showHeroBanner"
+    (bookingClicked)="onBookingClicked()"
+    (roomsExplore)="onExploreRoom()">
+</app-hero-banner>
+
+<app-hostel-listing *ngIf="showHostelListing"></app-hostel-listing>
+<app-explore-room *ngIf="showExploreRoom"></app-explore-room>
+<app-login *ngIf="showLoginPage" (loginSuccess)="onLoginSuccess()"></app-login>
+<app-signup *ngIf="showsignupPage" (signupSuccess)="onSignupSuccess()"></app-signup>
+
+<app-footer></app-footer>

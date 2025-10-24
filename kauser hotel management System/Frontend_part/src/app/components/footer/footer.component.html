@@ -1,0 +1,71 @@
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Logo and Description -->
+    <div class="footer-section">
+      <img src="assets/logo-white.png" alt="Kauser Hotel Logo" class="footer-logo">
+      <p class="footer-description">
+        Experience unparalleled luxury at Kauser Hotel, where every detail is crafted for your comfort and enjoyment.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li *ngFor="let link of footerLinks">
+          <a [routerLink]="link.path" class="footer-link">{{ link.text }}</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="footer-section">
+      <h3 class="footer-heading">Contact Us</h3>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>{{ contactInfo.address }}</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>{{ contactInfo.phone }}</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>{{ contactInfo.email }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-section">
+      <h3 class="footer-heading">Newsletter</h3>
+      <p class="newsletter-text">Subscribe to receive special offers and updates</p>
+      <form (submit)="subscribeNewsletter()" class="newsletter-form">
+        <input 
+          type="email" 
+          [(ngModel)]="newsletterEmail" 
+          name="newsletterEmail"
+          placeholder="Your email address" 
+          required
+          class="newsletter-input"
+        >
+        <button type="submit" class="newsletter-button">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Social Media and Copyright -->
+  <div class="footer-bottom">
+    <div class="social-media">
+      <a *ngFor="let social of socialMedia" [href]="social.url" target="_blank" rel="noopener">
+        <img [src]="social.icon" [alt]="social.url + ' icon'" class="social-icon">
+      </a>
+    </div>
+    <div class="copyright">
+      &copy; {{ currentYear }} Kauser Hotel. All Rights Reserved.
+    </div>
+  </div>
+</footer>

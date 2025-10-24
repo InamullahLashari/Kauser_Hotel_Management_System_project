@@ -1,0 +1,28 @@
+<section class="hero">
+  <div class="hero-slides">
+    <img 
+      *ngFor="let image of images; let i = index"
+      [src]="image"
+      [class.active]="i === currentIndex"
+      class="slide"
+      alt="Hotel Banner"
+    >
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <h1 class="hero-title">Welcome to Kauser Hotel</h1>
+    <p class="hero-subtitle">Experience Luxury Like Never Before</p>
+    <div class="hero-buttons">
+      
+      <button (click)="onRoomsExploreClick()" class="btn btn-primary">Explore Room</button>
+
+
+      <button (click)="onBooking()" class="btn btn-secondary">Book Now</button>
+      
+      
+      
+    </div>
+  </div>
+</section>
